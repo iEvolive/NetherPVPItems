@@ -1,0 +1,6 @@
+name: NetherPVP
+version: 1.0
+description: PVP Plugin for EcoCityCraft's Nether
+author: JamieSinn
+main: me.JamieSinn.Bukkit.NetherPVP
+database: false
