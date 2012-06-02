@@ -25,5 +25,6 @@ public class NetherPVP extends JavaPlugin
 	{
 		PluginDescriptionFile pdfFile = this.getDescription();
 		this.logger.info(pdfFile.getName() + " Has Been Disabled!");
+		
 	}
 }

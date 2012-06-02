@@ -12,15 +12,15 @@ import org.bukkit.event.block.BlockPlaceEvent;
 public class BlockListener implements Listener
 {
 
-	public void generateSlowCube(Location point, int length){  
+	public void generateSlowCube(Location point, int slowlength){  
 		World world = point.getWorld();
 		int x_start = point.getBlockX();    
 		int y_start = point.getBlockY();     
 		int z_start = point.getBlockZ();
 	 
-		int x_length = x_start + length;    
-		int y_length = y_start + length;
-		int z_length = z_start + length;
+		int x_length = x_start + slowlength;    
+		int y_length = y_start + slowlength;
+		int z_length = z_start + slowlength;
 	 
 		for(int x_operate = x_start; x_operate <= x_length; x_operate++)
 		{ 
@@ -35,15 +35,15 @@ public class BlockListener implements Listener
 			}
 		}
 	}
-	public void generateLavaCube(Location point, int length){  
+	public void generateLavaCube(Location point, int lavalength){  
 		World world = point.getWorld();
 		int x_start = point.getBlockX();    
 		int y_start = point.getBlockY();     
 		int z_start = point.getBlockZ();
 	 
-		int x_length = x_start + length;    
-		int y_length = y_start + length;
-		int z_length = z_start + length;
+		int x_length = x_start + lavalength;    
+		int y_length = y_start + lavalength;
+		int z_length = z_start + lavalength;
 	 
 		for(int x_operate = x_start; x_operate <= x_length; x_operate++)
 		{ 
@@ -64,7 +64,7 @@ public class BlockListener implements Listener
 	public static Material[] lavablock = {Material.REDSTONE_WIRE};
 	
 	@EventHandler
-	public void onSlowBlockPlace(BlockPlaceEvent event)
+	public void onBlockPlace(BlockPlaceEvent event)
 	{
 		int slowlength = 5;
 		int lavalength = 5;
