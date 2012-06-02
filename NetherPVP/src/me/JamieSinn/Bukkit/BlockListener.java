@@ -9,8 +9,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import ru.tehkode.permissions.bukkit.PermissionsEx;
-
 public class BlockListener implements Listener
 {
 
@@ -74,7 +72,7 @@ public class BlockListener implements Listener
 		Player player = event.getPlayer();
 		Block targetBlock = player.getTargetBlock(null, 50);
 		Location point = targetBlock.getLocation();
-		if(PermissionsEx.getUser(player).has("NetherPVP.Terminator") || player.isOp())
+		if(player.hasPermission("NetherPVP.slow"))
 		{
 			for (Material slow : slowblock) 
 			{
@@ -84,6 +82,9 @@ public class BlockListener implements Listener
 				this.generateSlowCube(point, slowlength);
 				}
 			}
+		}
+		if(player.hasPermission("NetherPVP.lava"))
+		{
 			for (Material lava : lavablock) 
 			{
 				if (lava == block) 
